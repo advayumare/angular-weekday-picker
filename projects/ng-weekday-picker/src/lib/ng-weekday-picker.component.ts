@@ -25,8 +25,7 @@ class Item {
 @Component({
   selector: 'ng-weekday-picker',
   templateUrl: './ng-weekday-picker.component.html',
-  styles: [
-  ],
+  styleUrls: ['./ng-weekday-picker.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -37,9 +36,10 @@ class Item {
 })
 export class NgWeekdayPickerComponent implements OnInit, ControlValueAccessor {
 
-  @Input() size: string = '';
+  @Input() size: string = 'md';
   @Output() changeDays: EventEmitter<string[]> = new EventEmitter<string[]>();
   public whiteDays: Array<string> = [];
+  public disabled = false;
   // public value: Array<string> = [];
 
   onChange: any = () => { };
@@ -81,11 +81,9 @@ export class NgWeekdayPickerComponent implements OnInit, ControlValueAccessor {
     this.value = value;
   }
 
-  // _handle_write_values(value: string[]) {
-  //   value.forEach((val) => {
-  //     this.renderer.setAttribute(event.target, 'class', '');
-  //   });
-  // }
+  setDisabledState(disabled: boolean) {
+    this.disabled = disabled;
+  }
 
   toggleClass(event: any, className: string, day: string) {
     const hasClass = event.target.classList.contains(className);
