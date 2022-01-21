@@ -36,7 +36,7 @@ class Item {
 })
 export class NgWeekdayPickerComponent implements OnInit, ControlValueAccessor {
 
-  @Input() size: string = 'md';
+  @Input() size: string = '';
   @Output() changeDays: EventEmitter<string[]> = new EventEmitter<string[]>();
   public whiteDays: Array<string> = [];
   public disabled = false;
@@ -93,6 +93,8 @@ export class NgWeekdayPickerComponent implements OnInit, ControlValueAccessor {
       if (index > -1) {
         this.whiteDays.splice(index, 1);
       }
+      this.onChange(this.whiteDays);
+      this.onTouched();
       this.changeDays.emit(this.whiteDays);
     } else {
       this.renderer.setAttribute(event.target, 'class', className);
@@ -100,6 +102,8 @@ export class NgWeekdayPickerComponent implements OnInit, ControlValueAccessor {
       if (index === -1) {
         this.whiteDays.push(day);
       }
+      this.onChange(this.whiteDays);
+      this.onTouched();
       this.changeDays.emit(this.whiteDays);
     }
   }
