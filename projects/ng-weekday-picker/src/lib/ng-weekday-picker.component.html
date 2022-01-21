@@ -1,4 +1,4 @@
-<ul id="days" class="checklist" class="{{size}}">
+<ul id="days" class="checklist {{size}}">
     <li (click)="disabled ? '' : toggleClass($event,'active', 'Su')" [ngClass]="{'active': whiteDays.indexOf('Su') > -1, 'disabled': disabled }">Su</li>
     <li (click)="disabled ? '' : toggleClass($event,'active', 'Mo')" [ngClass]="{'active': whiteDays.indexOf('Mo') > -1, 'disabled': disabled }">Mo</li>
     <li (click)="disabled ? '' : toggleClass($event,'active', 'Tu')" [ngClass]="{'active': whiteDays.indexOf('Tu') > -1, 'disabled': disabled }">Tu</li>
