@@ -1,5 +1,8 @@
 $primary: #4099ff;
 
+:root {
+  --primary: #{$primary};
+}
 .checklist::selection {
 	background: none;
 }
