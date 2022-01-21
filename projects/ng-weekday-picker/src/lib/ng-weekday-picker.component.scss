@@ -1,8 +1,5 @@
 $primary: #4099ff;
 
-:root {
-  --primary: #{$primary};
-}
 .checklist::selection {
 	background: none;
 }
@@ -38,7 +35,7 @@ $primary: #4099ff;
 }
 .checklist > .active {
   border-radius: 44px;
-  border: 2px solid var(--primary);
+  border: 2px solid $primary;
   color: #ffffff;
 }
 .checklist > .right-side {
@@ -76,14 +73,14 @@ $primary: #4099ff;
   border-radius: 44px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
-  border-left: 2px solid var(--primary);
+  border-left: 2px solid $primary;
   border-top: 2px solid transparent;
 }
 .checklist.vertical > .left-side {
   border-radius: 44px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-right: 2px solid var(--primary);
+  border-right: 2px solid $primary;
   border-bottom: 2px solid transparent;
 }
 .checklist.vertical > .center-side {
@@ -93,8 +90,8 @@ $primary: #4099ff;
   border-top-left-radius: 0 ;
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
-  border-right: 2px solid var(--primary);
-  border-left: 2px solid var(--primary);
+  border-right: 2px solid $primary;
+  border-left: 2px solid $primary;
 }
 .checklist.sm > * {
   width: 30px;
@@ -103,25 +100,19 @@ $primary: #4099ff;
   font-weight: 700;
   margin: 2px;
   border-width: 1px;
-  color: var(--primary);
+  color: $primary;
 }
 .checklist.sm > .active {
   border-width: 1px;
   padding: 5px 1px;
-  background-color: var(--primary);
+  background-color: primary;
   color: #ffffff;
 }
 .checklist.vertical.sm {
   width: 30px;
+}
+.checklist.vertical.sm {
   padding: 2px 3px;
-}
-.checklist.vertical.md {
-  width: 38px;
-  padding: 3px 4px;
-}
-.checklist.vertical.lg {
-  width: 45px;
-  padding: 5px 5px;
 }
 .checklist.large > * {
   width: 44px;
@@ -129,14 +120,20 @@ $primary: #4099ff;
   font-size: 13px;
   font-weight: 700;
   margin: 2px;
-  border: 2px solid var(--primary);
+  border: 2px solid $primary;
   border-radius: 44px;
-  color: var(--primary);
+  color: $primary;
 }
-.checklist.large > .active {
+.checklist.lg > .active {
   border-width: 2px;
-  background-color: var(--primary);
+  background-color: $primary;
   color: #ffffff;
+}
+.checklist.vertical.lg {
+  width: 45px;
+}
+.checklist.vertical.lg {
+  padding: 5px 5px;
 }
 .checklist.quadratic, .checklist.quadratic > * , .checklist.vertical.quadratic > * {
   border-radius: 0;
@@ -149,7 +146,4 @@ $primary: #4099ff;
 }
 .checklist.more-padded-t {
   padding-top: 10px;
-}
-li[disabled] {
-    pointer-events: none;
 }

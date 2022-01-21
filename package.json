@@ -1,12 +1,13 @@
 {
   "name": "ng-weekday-picker",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && ng copy",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "copy": "cp package.json dist/ng-weekday-picker/"
   },
   "private": false,
   "dependencies": {
