@@ -1,24 +1,30 @@
 # NgWeekdayPicker
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+Angular component to let user select multiple weekdays from the list
+Can be used as Form Control in template driven forms as well as reactive forms
 
-## Code scaffolding
+See [Demo](https://angular-e9ntox.stackblitz.io) 
 
-Run `ng generate component component-name --project ng-weekday-picker` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-weekday-picker`.
-> Note: Don't forget to add `--project ng-weekday-picker` or else it will be added to the default project in your `angular.json` file. 
+## Getting Started
+### Step 1: Install ng-weekday-picker
+#### NPM
 
-## Build
+`npm install --save ng-weekday-picker`
+  
+### Step 2: Import the NgWeekdayPickerModule 
+    import { NgWeekdayPickerModule } from 'ng-weekday-picker';
+    @NgModule({
+    declarations: [AppComponent],
+      imports: [NgWeekdayPickerModule],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule {}
+### Step 3: Usage
 
-Run `ng build ng-weekday-picker` to build the project. The build artifacts will be stored in the `dist/` directory.
+    <ng-weekday-picker 
+      [size]="'lg'" 
+      name="whiteDays" 
+      formControlName="whiteDays"
+      (changeDays)="$event">
+    </ng-weekday-picker>
 
-## Publishing
-
-After building your library with `ng build ng-weekday-picker`, go to the dist folder `cd dist/ng-weekday-picker` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ng-weekday-picker` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

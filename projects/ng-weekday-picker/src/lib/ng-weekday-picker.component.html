@@ -1,9 +1,9 @@
-<ul id="days" class="checklist" [ngClass]="{'medium': size == 'medium', 'small': size == 'small', 'large': size == 'large'}">
-    <li (click)="toggleClass($event,'active', 'Su')" [ngClass]="{'active': whiteDays.indexOf('Su') > -1 }">Su</li>
-    <li (click)="toggleClass($event,'active', 'Mo')" [ngClass]="{'active': whiteDays.indexOf('Mo') > -1 }">Mo</li>
-    <li (click)="toggleClass($event,'active', 'Tu')" [ngClass]="{'active': whiteDays.indexOf('Tu') > -1 }">Tu</li>
-    <li (click)="toggleClass($event,'active', 'We')" [ngClass]="{'active': whiteDays.indexOf('We') > -1 }">We</li>
-    <li (click)="toggleClass($event,'active', 'Th')" [ngClass]="{'active': whiteDays.indexOf('Th') > -1 }">Th</li>
-    <li (click)="toggleClass($event,'active', 'Fr')" [ngClass]="{'active': whiteDays.indexOf('Fr') > -1 }">Fr</li>
-    <li (click)="toggleClass($event,'active', 'Sa')" [ngClass]="{'active': whiteDays.indexOf('Sa') > -1 }">Sa</li>
-    </ul>
+<ul id="days" class="checklist" class="{{size}}">
+    <li (click)="disabled ? '' : toggleClass($event,'active', 'Su')" [ngClass]="{'active': whiteDays.indexOf('Su') > -1, 'disabled': disabled }">Su</li>
+    <li (click)="disabled ? '' : toggleClass($event,'active', 'Mo')" [ngClass]="{'active': whiteDays.indexOf('Mo') > -1, 'disabled': disabled }">Mo</li>
+    <li (click)="disabled ? '' : toggleClass($event,'active', 'Tu')" [ngClass]="{'active': whiteDays.indexOf('Tu') > -1, 'disabled': disabled }">Tu</li>
+    <li (click)="disabled ? '' : toggleClass($event,'active', 'We')" [ngClass]="{'active': whiteDays.indexOf('We') > -1, 'disabled': disabled }">We</li>
+    <li (click)="disabled ? '' : toggleClass($event,'active', 'Th')" [ngClass]="{'active': whiteDays.indexOf('Th') > -1, 'disabled': disabled }">Th</li>
+    <li (click)="disabled ? '' : toggleClass($event,'active', 'Fr')" [ngClass]="{'active': whiteDays.indexOf('Fr') > -1, 'disabled': disabled }">Fr</li>
+    <li (click)="disabled ? '' : toggleClass($event,'active', 'Sa')" [ngClass]="{'active': whiteDays.indexOf('Sa') > -1, 'disabled': disabled }">Sa</li>
+</ul>
